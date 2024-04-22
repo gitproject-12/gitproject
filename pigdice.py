@@ -6,15 +6,24 @@ class Player:
         self.total_score = 0
 
     def add_score(self, score):
+        """플레이어의 총점에 주어진 점수를 추가합니다."""
         self.total_score += score
 
     def reset_score(self):
+        """플레이어의 총점을 초기화합니다."""
         self.total_score = 0
 
 def roll_dice():
+    """1에서 6 사이의 무작위 숫자를 반환하는 주사위를 굴리는 함수입니다."""
     return random.randint(1, 6)
 
 def pig_game(players, target_score=100):
+    """Pig Dice 게임을 실행하는 함수입니다.
+    
+    Args:
+        players (list): 플레이어 객체로 이루어진 리스트입니다.
+        target_score (int, optional): 게임에서 이길 수 있는 최소 점수입니다. 기본값은 100입니다.
+    """
     current_player_index = 0
     while True:
         current_player = players[current_player_index]
